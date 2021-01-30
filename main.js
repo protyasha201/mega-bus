@@ -46,17 +46,8 @@ function increaseTickets(idName) {
     }
     document.getElementById("subtotal").innerText = newSubtotal;
 
-    //increasing tax
-    const tax = document.getElementById("tax");
-    const taxNumber = parseInt(tax.innerText);
-    var totalTax = (newSubtotal * 10) / 100;
-    document.getElementById("tax").innerText = totalTax;
-
-    //Max-Total
-    const total = document.getElementById("maxTotal");
-    const maxTotalNumber = parseInt(total.innerText);
-    var maxTotal = newSubtotal + totalTax;
-    document.getElementById("maxTotal").innerText = maxTotal;
+    totalTaxCount();
+    maxTotal();
 }
 
 
@@ -97,16 +88,33 @@ function decreaseTickets(idName) {
         }
         document.getElementById("subtotal").innerText = newSubtotal;
 
-        // decreasing tax
-        const tax = document.getElementById("tax");
-        const taxNumber = parseInt(tax.innerText);
-        var totalTax = (newSubtotal * 10) / 100;
-        document.getElementById("tax").innerText = totalTax;
-
-        //Max-Total
-        const total = document.getElementById("maxTotal");
-        const maxTotalNumber = parseInt(total.innerText);
-        var maxTotal = newSubtotal + totalTax;
-        document.getElementById("maxTotal").innerText = maxTotal;
+        totalTaxCount(); //total tax count function
+        maxTotal();     //max total count function
     }
+}
+
+
+
+//Total tax count function
+function totalTaxCount() {
+    const subtotal = document.getElementById("subtotal").innerText;
+    var newSubtotal = parseInt(subtotal);
+    const tax = document.getElementById("tax");
+    const taxNumber = parseInt(tax.innerText);
+    var totalTax = (newSubtotal * 10) / 100;
+    document.getElementById("tax").innerText = totalTax;
+}
+
+
+
+//Max Total count function
+function maxTotal() {
+    const totalTax = document.getElementById("tax").innerText;
+    const totalTaxNumber = parseInt(totalTax);
+    const subtotal = document.getElementById("subtotal").innerText;
+    const newSubtotal = parseInt(subtotal);
+    const total = document.getElementById("maxTotal");
+    const maxTotalNumber = parseInt(total.innerText);
+    var maxTotal = newSubtotal + totalTaxNumber;
+    document.getElementById("maxTotal").innerText = maxTotal;
 }
