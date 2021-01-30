@@ -1,19 +1,6 @@
-//confirmation for booking
-const bookNow = document.getElementById("bookNow");
-bookNow.addEventListener("click", () => {
-    const confirmBooking = document.getElementById("confirmBooking").style.display = "block";
-    const hideDisplay = document.querySelectorAll(".signInPage");
-    for (var i = 0; i < hideDisplay.length; i++) {
-        hideDisplay[i].style.display = "none";
-    }
-    document.getElementById("image").img.style.display = 'none';
-})
-
-
-
 //increase tickets and price
 getIncrease("firstClassTicketIncrease", "firstClass");
-getIncrease("economyTicketIncrease", "secondClass");
+getIncrease("economyTicketIncrease", "economyClass");
 
 
 
@@ -41,7 +28,7 @@ function increaseTickets(idName) {
     if (idName == "firstClass") {
         newSubtotal = presentSubtotal + 150;
     }
-    else if (idName == "secondClass") {
+    else if (idName == "economyClass") {
         newSubtotal = presentSubtotal + 100;
     }
     document.getElementById("subtotal").innerText = newSubtotal;
@@ -54,7 +41,7 @@ function increaseTickets(idName) {
 
 //decrease tickets and price
 getDecrease("firstClassTicketDecrease", "firstClass");
-getDecrease("economyTicketDecrease", "secondClass");
+getDecrease("economyTicketDecrease", "economyClass");
 
 
 
@@ -83,7 +70,7 @@ function decreaseTickets(idName) {
         if (idName == "firstClass") {
             newSubtotal = presentSubtotal - 150;
         }
-        else if (idName == "secondClass") {
+        else if (idName == "economyClass") {
             newSubtotal = presentSubtotal - 100;
         }
         document.getElementById("subtotal").innerText = newSubtotal;
@@ -118,3 +105,24 @@ function maxTotal() {
     var maxTotal = newSubtotal + totalTaxNumber;
     document.getElementById("maxTotal").innerText = maxTotal;
 }
+
+
+
+//confirmation for booking
+const bookNow = document.getElementById("bookNow");
+bookNow.addEventListener("click", () => {
+    const confirmBooking = document.getElementById("confirmBooking").style.display = "block";
+    const hideDisplay = document.querySelectorAll(".signInPage");
+    for (var i = 0; i < hideDisplay.length; i++) {
+        hideDisplay[i].style.display = "none";
+    }
+
+    //showing confirmation
+    const ticketFirst = document.getElementById("firstClass").value;
+    const ticketEconomy = document.getElementById("economyClass").value;
+    const totalPrice = document.getElementById("maxTotal").innerText;
+    
+    document.getElementById("firstTicket").innerText = ticketFirst;
+    document.getElementById("economyTicket").innerText = ticketEconomy;
+    document.getElementById("confirmTotal").innerText = totalPrice;
+})

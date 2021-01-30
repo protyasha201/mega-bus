@@ -74,7 +74,7 @@
                     <div class="input-group f-class">
                         <div>
                             <label for="">Economy ($100)</label>
-                            <input id="secondClass" class="inp-style inp-width" type="number" name="" value="2">
+                            <input id="economyClass" class="inp-style inp-width" type="number" name="" value="2">
                         </div>
                         <div class="plus-minus-btn">
                             <p> <span id="economyTicketIncrease" class="button">+</span> <span class="button" id="economyTicketDecrease">-</span> </p>
@@ -115,9 +115,17 @@
     </main>
 
     <!-- confirmation after submit -->
-    <footer>
-        <div id="confirmBooking">
-            <h3>Congratulations, Your booking has successfully ended</h3>
+    <footer id="confirmBooking">
+        <div>
+            <h3>Congratulations, Your booking has successfully ended.</h3>
+        </div>
+        <div class="confirm">
+            <h2>You Have Buy: <span id="firstTicket"></span> First Class Ticket</h2>
+            <h2>You Have Buy: <span id="economyTicket"></span> Economy Class Ticket</h2>
+            <h2>Your Total Is: $ <span id="confirmTotal"></span></h2>
+        </div>
+        <div>
+            <p class="good-wishing">Happy Journey :)</p>
         </div>
     </footer>
 
