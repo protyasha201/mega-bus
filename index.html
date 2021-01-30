@@ -15,7 +15,7 @@
 
 <body>
     <!--Header and Menu Section-->
-    <header class="container">
+    <header class="container signInPage">
         <nav>
             <ul>
                 <li><a href="#">Home</a></li>
@@ -27,91 +27,101 @@
     </header>
 
     <!--Booking Section-->
-    <main class="main-content container">
-
-        <div class="booking-content">
-            <h1>Mega City Bus</h1>
-            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-        </div>
-
-
-        <div class="booking-form">
-            <h3>Explore By Bus</h3>
-
-            <div class="inputs">
-                <div class="input-group">
-                    <label" for="">From</label>
-                    <input class="inp-style" type="text" name="" placeholder="Dhaka">
-                </div>
-                <div class="input-group">
-                    <label" for="">From</label>
-                    <input class="inp-style" type="text" name="" placeholder="Chittagone">
-                </div>
+    <main class="main-content container signInPage">
+            <div class="booking-content">
+                <h1>Mega City Bus</h1>
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                    industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type
+                    and
+                    scrambled it to make a type specimen book.</p>
             </div>
 
-            <div class="inputs">
-                <div class="input-group">
-                    <label" for="">Departure</label>
-                    <input class="inp-style" type="date" name="">
-                </div>
-                <div class="input-group">
-                    <label for="">Return</label>
-                    <input class="inp-style" type="date" name="">
-                </div>
-            </div>
-            <div class="inputs">
-                <div class="input-group f-class">
-                <div>
-                    <label for="">First Class ($150)</label>
-                    <input class="inp-style inp-width" type="number" name="">
-                </div>
-                <div class="plus-minus-btn">
-                    <p>+ -</p>
-                </div>
-            </div>
-                <div class="input-group f-class">
-                    <div>
-                        <label for="">Economy ($100)</label>
-                        <input class="inp-style inp-width" type="number" name="">
+
+            <div class="booking-form">
+                <h3>Explore By Bus</h3>
+
+                <div class="inputs">
+                    <div class="input-group">
+                        <label" for="">From</label>
+                            <input class="inp-style" type="text" name="" placeholder="Dhaka">
                     </div>
-                    <div class="plus-minus-btn">
-                        <p> <span>+</span> <span>-</span> </p>
+                    <div class="input-group">
+                        <label" for="">From</label>
+                            <input class="inp-style" type="text" name="" placeholder="Chittagone">
                     </div>
                 </div>
 
-            </div>
-            <div class="calculations">
-                <div class="amount">
-                    <div class="left">
-                        <p>Subtotal</p>
+                <div class="inputs">
+                    <div class="input-group">
+                        <label" for="">Departure</label>
+                            <input class="inp-style" type="date" name="">
                     </div>
-                    <div class="right">
-                        <p>$500</p>
+                    <div class="input-group">
+                        <label for="">Return</label>
+                        <input class="inp-style" type="date" name="">
                     </div>
                 </div>
+                <div class="inputs">
+                    <div class="input-group f-class">
+                        <div>
+                            <label for="">First Class ($150)</label>
+                            <input id="firstClass" class="inp-style inp-width" type="number" value="1" name="">
+                        </div>
+                        <div class="plus-minus-btn">
+                            <p><span id="firstClassTicketIncrease" class="button">+</span> <span class="button" id="firstClassTicketDecrease">-</span></p>
+                        </div>
+                    </div>
+                    <div class="input-group f-class">
+                        <div>
+                            <label for="">Economy ($100)</label>
+                            <input id="secondClass" class="inp-style inp-width" type="number" name="" value="1">
+                        </div>
+                        <div class="plus-minus-btn">
+                            <p> <span id="economyTicketIncrease" class="button">+</span> <span class="button" id="economyTicketDecrease">-</span> </p>
+                        </div>
+                    </div>
 
-                <div class="amount">
-                    <div class="left">
-                        <p>Charge 10% VAT</p>
+                </div>
+                <div class="calculations">
+                    <div class="amount">
+                        <div class="left">
+                            <p>Subtotal</p>
+                        </div>
+                        <div class="right">
+                            <p>$ <span id="subtotal">350</span></p>
+                        </div>
                     </div>
-                    <div class="right">
-                        <p>$50</p>
+
+                    <div class="amount">
+                        <div class="left">
+                            <p>Charge 10% VAT</p>
+                        </div>
+                        <div class="right">
+                            <p>$35</p>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="amount">
+                        <div class="left">
+                            <h4>Total</h4>
+                        </div>
+                        <div class="right">
+                            <p>$385</p>
+                        </div>
                     </div>
                 </div>
-                <hr>
-                <div class="amount">
-                    <div class="left">
-                        <h4>Total</h4>
-                    </div>
-                    <div class="right">
-                        <p>$550</p>
-                    </div>
-                </div>
+                <button id="bookNow" class="btn-style">Book Now</button>
             </div>
-            <button class="btn-style">Book Now</button>
-        </div>
     </main>
 
+    <!-- confirmation after submit -->
+    <footer>
+        <div id="confirmBooking">
+            <h3>Congratulations, Your booking has successfully ended</h3>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
     <!--Thank You-->
 </body>
 

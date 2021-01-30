@@ -116,9 +116,30 @@ nav ul li a:hover, a.active{
     border: none;
     color: #fff;
     font-weight: 500;
+    cursor: pointer;
     background-color:  #52AF3A;
+}
+.btn-style:hover{
+    background-color:  #5b974a;;
 }
 .amount{
     display: flex;
     justify-content: space-between;
+}
+.button{
+    display: block;
+    background-color: rgb(243, 240, 240);
+    text-align: center;
+    width: 40px;
+    cursor: pointer;
+    border-radius: 10px;
+    margin-top: 10px;
+    margin-right: 10px;
+    color: black;
+}
+.button:hover{
+    background-color: rgb(209, 228, 222);
+}
+#confirmBooking{
+    display: none;
 }
