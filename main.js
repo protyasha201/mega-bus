@@ -1,5 +1,4 @@
 //confirmation for booking
-
 const bookNow = document.getElementById("bookNow");
 bookNow.addEventListener("click", () => {
     const confirmBooking = document.getElementById("confirmBooking").style.display = "block";
@@ -10,33 +9,23 @@ bookNow.addEventListener("click", () => {
     document.getElementById("image").img.style.display = 'none';
 })
 
+
+
 //increase tickets and price
+getIncrease("firstClassTicketIncrease", "firstClass");
+getIncrease("economyTicketIncrease", "secondClass");
 
-getIncrease("firstClassTicketIncrease");
-getIncrease("economyTicketIncrease");
 
-//tickets increase function calling
-// function getIncrease(idName) {
-//     if (idName == "firstClassTicketIncrease") {
-//         const ticketIncrease = document.getElementById("firstClassTicketIncrease");
-//         firstClassTicketIncrease.addEventListener("click", () => {
-//             increaseTickets("firstClass");
-//         })
-//     }
-//     else if (idName == "economyTicketIncrease") {
-//         const economyTicketIncrease = document.getElementById("economyTicketIncrease");
-//         economyTicketIncrease.addEventListener("click", () => {
-//             increaseTickets("secondClass");
-//         })
-//     }
-// }
 
-function clickHandler(idName, ticketFor) {
+//getIncrease function
+function getIncrease(idName, ticketFor) {
     const ticketIncrease = document.getElementById(idName);
     ticketIncrease.addEventListener("click", () => {
         increaseTickets(ticketFor);
     })
 }
+
+
 
 //increasing tickets quantity
 function increaseTickets(idName) {
@@ -44,29 +33,37 @@ function increaseTickets(idName) {
     const presentTicket = parseInt(ticketCount);
     var totalTickets = presentTicket + 1;
     document.getElementById(idName).value = totalTickets;
+
+    //increasing subtotal
+    const subtotal = document.getElementById("subtotal");
+    const presentSubtotal = parseInt(subtotal.innerText);
+    var newSubtotal = presentSubtotal;
+    if(idName == "firstClass"){
+        newSubtotal = presentSubtotal + 150;
+    }
+    else if(idName == "secondClass"){
+        newSubtotal = presentSubtotal + 100;
+    }
+    document.getElementById("subtotal").innerText = newSubtotal;
 }
 
-//decrease tickets and price
 
-getDecrease("firstClassTicketDecrease");
-getDecrease("economyTicketDecrease");
+
+//decrease tickets and price
+getDecrease("firstClassTicketDecrease", "firstClass");
+getDecrease("economyTicketDecrease", "secondClass");
+
 
 
 //calling decreasing function
-function getDecrease(idName) {
-    if (idName == "firstClassTicketDecrease") {
-        const ticketDecrease = document.getElementById("firstClassTicketDecrease");
-        firstClassTicketDecrease.addEventListener("click", () => {
-            decreaseTickets("firstClass");
-        })
-    }
-    else if (idName == "economyTicketDecrease") {
-        const economyTicketDecrease = document.getElementById("economyTicketDecrease");
-        economyTicketDecrease.addEventListener("click", () => {
-            decreaseTickets("secondClass");
-        })
-    }
+function getDecrease(idName, ticketFor) {
+    const ticketIncrease = document.getElementById(idName);
+    ticketIncrease.addEventListener("click", () => {
+        decreaseTickets(ticketFor);
+    })
 }
+
+
 
 //decreasing tickets quantity
 function decreaseTickets(idName) {
