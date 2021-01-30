@@ -70,7 +70,6 @@ nav ul li a:hover, a.active{
     border-radius: 5px;
     float: right;
     color: white;
-    text-shadow: 1px 1px 10px black;
     width: 80%;
     margin: 50px 0px 0px 80px;
 }
